@@ -1,0 +1,349 @@
+/* =================== VARIAN BARU UNTUK WARNA & FONT =================== */
+:root {
+    --bg-color: #0f1012; /* Warna latar belakang sangat gelap */
+    --container-bg: #1c1f24; /* Latar belakang kontainer sedikit lebih terang */
+    --text-color: #f0f2f5; /* Teks terang */
+    --primary-color: #ff0400; /* Ungu cerah sebagai warna utama */
+    --primary-hover: #6b5400; /* Ungu lebih gelap saat hover */
+    --secondary-color: #51534a; /* Garis pemisah */
+    --stop-color: #eb4d4b; /* Merah menyala untuk stop */
+    --stop-hover: #c0392b; /* Merah lebih gelap saat hover */
+    --playing-color: #26de81; /* Hijau cerah untuk status playing */
+    --shadow-color: rgba(0, 0, 0, 0.7); /* Bayangan lebih pekat */
+
+    /* Font baru dari Google Fonts */
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden; /* Mencegah scroll jika konten terlalu besar */
+}
+
+.container {
+    width: 100%;
+    max-width: 950px; /* Sedikit lebih lebar */
+    background-color: var(--container-bg);
+    border-radius: 15px; /* Radius lebih besar */
+    box-shadow: 0 15px 40px var(--shadow-color); /* Bayangan lebih kuat */
+    padding: 30px; /* Padding lebih besar */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Garis tepi tipis */
+}
+
+header {
+    text-align: center;
+    border-bottom: 1px solid var(--secondary-color);
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+/* =================== KODE BARU UNTUK LOGO =================== */
+.logo {
+    max-width: 100px; /* Ukuran logo */
+    height: auto;
+    margin-bottom: 15px; /* Jarak antara logo dan judul */
+    filter: drop-shadow(0 0 5px rgba(140, 122, 230, 0.5)); /* Efek bayangan pada logo */
+}
+/* ============================================================= */
+
+h1 {
+    margin: 0;
+    font-size: 2.2rem; /* Ukuran judul lebih besar */
+    font-family: var(--font-heading);
+    font-weight: 700; /* Lebih tebal */
+    color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(140, 122, 230, 0.4); /* Efek cahaya pada judul */
+}
+
+.now-playing-container {
+    margin-top: 20px;
+    font-size: 1.3em; /* Ukuran teks lebih besar */
+    color: #b0b0b0;
+}
+
+#now-playing-track {
+    font-weight: 700;
+    color: var(--playing-color);
+    text-shadow: 0 0 8px rgba(38, 222, 129, 0.5); /* Efek cahaya pada track yang dimainkan */
+}
+
+#soundboard-controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* Tombol sedikit lebih besar */
+    gap: 18px; /* Jarak antar tombol */
+}
+
+.track-button {
+    padding: 22px 18px; /* Padding lebih besar */
+    font-size: 1.1em; /* Ukuran font lebih besar */
+    font-weight: 600; /* Lebih tebal */
+    cursor: pointer;
+    border: none;
+    border-radius: 10px; /* Radius lebih besar */
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    transition: background-color 0.25s ease, transform 0.1s ease, box-shadow 0.25s ease;
+    word-wrap: break-word;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Bayangan tombol normal */
+}
+
+.track-button:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px); /* Efek naik sedikit saat hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4); /* Bayangan lebih kuat saat hover */
+}
+
+.track-button:active {
+    transform: scale(0.96); /* Menekan tombol */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Bayangan lebih kecil saat aktif */
+}
+
+.track-button.playing {
+    background-color: var(--playing-color);
+    box-shadow: 0 0 20px rgba(38, 222, 129, 0.6); /* Cahaya hijau menyala saat playing */
+    transform: scale(1.02); /* Sedikit membesar saat playing */
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Border tipis */
+}
+
+footer {
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid var(--secondary-color);
+}
+
+.global-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Agar responsif di layar kecil */
+    gap: 20px;
+}
+
+.control-button.stop {
+    background-color: var(--stop-color);
+    color: var(--text-color);
+    padding: 18px 35px; /* Padding lebih besar */
+    font-size: 1.3em; /* Ukuran font lebih besar */
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.1s ease, box-shadow 0.25s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.control-button.stop:hover {
+    background-color: var(--stop-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}
+.control-button.stop:active {
+    transform: scale(0.96);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+#volume-slider {
+    cursor: pointer;
+    width: 220px; /* Lebar slider sedikit lebih besar */
+    height: 10px; /* Tebal slider */
+    background: #4a4d53;
+    border-radius: 5px;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+#volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px; /* Ukuran thumb lebih besar */
+    height: 20px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.2s ease;
+}
+
+#volume-slider::-webkit-slider-thumb:hover {
+    background-color: var(--primary-hover);
+}
+
+#volume-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.2s ease;
+}
+#volume-slider::-moz-range-thumb:hover {
+    background-color: var(--primary-hover);
+}
+
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 25px;
+    width: 100%;
+}
+
+#seek-slider {
+    flex-grow: 1;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 10px; /* Tebal slider */
+    background: #4a4d53;
+    border-radius: 5px;
+    outline: none;
+}
+
+#seek-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px; /* Ukuran thumb lebih besar */
+    height: 20px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.2s ease;
+}
+#seek-slider::-webkit-slider-thumb:hover {
+    background-color: var(--primary-hover);
+}
+
+#seek-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.2s ease;
+}
+#seek-slider::-moz-range-thumb:hover {
+    background-color: var(--primary-hover);
+}
+
+#current-time, #duration {
+    font-variant-numeric: tabular-nums;
+    color: #b0b0b0;
+    font-weight: 600;
+    min-width: 45px; /* Pastikan ada ruang cukup untuk waktu */
+    text-align: center;
+}
+
+/* ============================================================= */
+/* =================== GAYA RESPONSIVE UNTUK HP =================== */
+/* ============================================================= */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 10px; /* Kurangi padding di layar kecil */
+        align-items: flex-start; /* Konten mulai dari atas */
+    }
+
+    .container {
+        padding: 20px; /* Kurangi padding di dalam kontainer */
+        margin-top: 15px;
+    }
+
+    .logo {
+        max-width: 80px; /* Kecilkan logo */
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 2.0em; /* Kecilkan ukuran judul */
+    }
+
+    .now-playing-container {
+        font-size: 1.1em;
+    }
+    
+    #soundboard-controls {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Buat tombol lebih kecil agar muat lebih banyak */
+        gap: 12px;
+    }
+
+    .track-button {
+        padding: 18px 10px; /* Sedikit kurangi padding tombol */
+        font-size: 1em;
+    }
+
+    /* Mengatur ulang layout kontrol utama di bagian bawah */
+    .global-controls {
+        flex-direction: column; /* Susun tombol STOP dan Volume secara vertikal */
+        align-items: stretch; /* Buat elemen membentang selebar kontainer */
+        gap: 25px; /* Beri jarak vertikal yang lebih besar */
+    }
+    
+    .control-button.stop {
+        width: 100%; /* Buat tombol STOP menjadi full-width */
+        padding: 16px;
+        font-size: 1.2em;
+    }
+    
+    .volume-control {
+        width: 100%; /* Buat kontrol volume menjadi full-width */
+        justify-content: space-between; /* Dorong label dan slider ke ujung */
+    }
+    
+    #volume-slider {
+        width: auto; /* Hapus lebar tetap */
+        flex-grow: 1; /* Biarkan slider mengisi ruang yang tersedia */
+        margin-left: 15px;
+    }
+    
+    .progress-container {
+        gap: 10px; /* Kurangi jarak pada progress bar */
+    }
+    
+    #current-time, #duration {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Penyesuaian ekstra untuk layar yang sangat kecil */
+    h1 {
+        font-size: 1.0em;
+    }
+    
+    #soundboard-controls {
+        grid-template-columns: 1fr 1fr; /* Paksa hanya 2 kolom */
+        gap: 10px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+}
