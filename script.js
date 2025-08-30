@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- PENGATURAN MUSIK ---
     const musicTracks = [
         { name: 'Visi Misi', path: 'music/Visi-Misi.mp3' },
+        { name: 'Sedih 2', path: 'music/2.mp3' },
         { name: 'Korupsi', path: 'music/3.mp3' },
         { name: 'Adegan Sedih', path: 'music/BC ADEGAN SEDIH.mp3' },
         { name: 'Telepon', path: 'music/EFEK SUARA MEMANGGIL TELEPON _ CALLING SOUND EFFECT.mp3' },
